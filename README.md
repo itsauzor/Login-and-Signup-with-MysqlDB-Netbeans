@@ -1,4 +1,4 @@
-//this note is a guide for database mysql workbench
+//this note is a guide for set up database mysql
 
 create database loginandsignupdb;
 
