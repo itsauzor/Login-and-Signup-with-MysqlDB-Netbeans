@@ -143,23 +143,23 @@ public class Login extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
+        private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
-        }//GEN-LAST:event_loginPasswordFieldActionPerformed
+        }
         
-        private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
-        }//GEN-LAST:event_usernameFieldActionPerformed
+        }
         
-        private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
+        private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {
                
          String username = usernameField.getText();
     String password = new String(loginPasswordField.getPassword());
 
-    // JDBC connection parameters
+    // JDBC connection Database
     String url = "jdbc:mysql://localhost:3306/loginandsignupdb";
-    String user = "root";
-    String passwordDB = "mysqlauzor404?";
+    String user = "your_mysql_user";
+    String passwordDB = "your_mysql_pass?";
 
     try (Connection connection = DriverManager.getConnection(url, user, passwordDB)) {
         String query = "SELECT * FROM signups WHERE username = ? AND password = ?";
@@ -170,21 +170,21 @@ public class Login extends javax.swing.JFrame {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 System.out.println("Login successful!");
-                // You can add code here to show a success message or redirect to a new screen
+                
             } else {
                 System.out.println("Invalid username or password.");
-                // You can add code here to show an error message
+                
             }
         }
     } catch (SQLException ex) {
         System.out.println("Error connecting to the database: " + ex.getMessage());
-        // You can add code here to show an error message
+       
     }
         
 
-        }//GEN-LAST:event_loginbtnActionPerformed
+        }
 
-        private void signupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupbtnActionPerformed
+        private void signupbtnActionPerformed(java.awt.event.ActionEvent evt) {
         
         Signup SignupFrame = new Signup();
         SignupFrame.setVisible(true);
@@ -192,7 +192,7 @@ public class Login extends javax.swing.JFrame {
         SignupFrame.setLocationRelativeTo(null); 
         this.dispose();
 
-        }//GEN-LAST:event_signupbtnActionPerformed
+        }
 
        
         public static void main(String args[]) {
