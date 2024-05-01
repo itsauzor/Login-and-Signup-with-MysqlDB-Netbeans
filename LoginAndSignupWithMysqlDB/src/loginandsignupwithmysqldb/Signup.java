@@ -231,7 +231,7 @@ public class Signup extends javax.swing.JFrame {
     // Generate a random id string
     String id = generateRandomID();
 
-    // JDBC connection parameters
+    // JDBC connection
     String url = "jdbc:mysql://localhost:3306/loginandsignupdb";
     String user = "your_mysql_user";
     String passwordDB = "your_mysql_pass";
@@ -262,15 +262,15 @@ public class Signup extends javax.swing.JFrame {
 
         }
 
-        private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
+        private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
         }
 
-        private void mobileNumberFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobileNumberFieldActionPerformed
+        private void mobileNumberFieldActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
         }
 
-        private void signupPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupPasswordFieldActionPerformed
+        private void signupPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
         }
         
