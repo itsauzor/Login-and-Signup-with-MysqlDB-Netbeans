@@ -184,22 +184,22 @@ public class Signup extends javax.swing.JFrame {
                 );
 
                 pack();
-        }// </editor-fold>//GEN-END:initComponents
+        }
 
-        private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {
                 // TODO add your handling code here:
-        }//GEN-LAST:event_nameFieldActionPerformed
+        }
 
-        private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
+        private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {
         Login LoginFrame = new Login();
         LoginFrame.setVisible(true);
         LoginFrame.pack();
         LoginFrame.setLocationRelativeTo(null); 
         this.dispose();
-        }//GEN-LAST:event_loginbtnActionPerformed
+        }
         private String generateRandomID() {
 
-//Generate random char and num combination id random
+//Generate char and num combination id random
 //    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 //    StringBuilder idBuilder = new StringBuilder();
 //    Random random = new Random();
@@ -221,20 +221,20 @@ public class Signup extends javax.swing.JFrame {
 
 }
 
-        private void signupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupbtnActionPerformed
+        private void signupbtnActionPerformed(java.awt.event.ActionEvent evt) {
     
           String username = nameField.getText();
           String address = addressField.getText();
           String mobileNumber = mobileNumberField.getText();
           String password = new String(signupPasswordField.getPassword());
 
-    // Generate a random 4-digit alphanumeric ID
+    // Generate a random id string
     String id = generateRandomID();
 
     // JDBC connection parameters
     String url = "jdbc:mysql://localhost:3306/loginandsignupdb";
-    String user = "root";
-    String passwordDB = "mysqlauzor404?";
+    String user = "your_mysql_user";
+    String passwordDB = "your_mysql_pass";
 
     try (Connection connection = DriverManager.getConnection(url, user, passwordDB)) {
         String query = "INSERT INTO signups (id, username, address, mobilenumber, password) VALUES (?, ?, ?, ?, ?)";
@@ -248,36 +248,32 @@ public class Signup extends javax.swing.JFrame {
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Signup successful!");
-                // You can add code here to show a success message or redirect to a new screen
+                
             } else {
                 System.out.println("Signup failed. No rows affected.");
-                // You can add code here to show an error message
-            }
+               
         }
     } catch (SQLException ex) {
         System.out.println("Error connecting to the database: " + ex.getMessage());
-        // You can add code here to show an error message
+       
     }
 
        
 
-        }//GEN-LAST:event_signupbtnActionPerformed
+        }
 
         private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
                 // TODO add your handling code here:
-        }//GEN-LAST:event_addressFieldActionPerformed
+        }
 
         private void mobileNumberFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobileNumberFieldActionPerformed
                 // TODO add your handling code here:
-        }//GEN-LAST:event_mobileNumberFieldActionPerformed
+        }
 
         private void signupPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupPasswordFieldActionPerformed
                 // TODO add your handling code here:
-        }//GEN-LAST:event_signupPasswordFieldActionPerformed
-
-        /**
-         * @param args the command line arguments
-         */
+        }
+        
         public static void main(String args[]) {
                 /* Set the Nimbus look and feel */
                 //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -302,7 +298,7 @@ public class Signup extends javax.swing.JFrame {
                 }
                 //</editor-fold>
 
-                /* Create and display the form */
+                
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                                 new Signup().setVisible(true);
